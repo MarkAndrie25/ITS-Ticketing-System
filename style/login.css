@@ -43,3 +43,9 @@ body {
     height: 100vh;
     width: 35%;
 }
+
+.form-login {
+    display: flex;
+    
+
+}

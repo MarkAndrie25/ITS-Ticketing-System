@@ -18,6 +18,7 @@
 
 body {
     background: linear-gradient(-50deg, white, whitesmoke);
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     min-height: 100vh;
@@ -84,7 +85,7 @@ body {
     background-color: var(--accent);
     color: var(--secondary-color);
     font-size: 1.5rem;
-    height: 2.8rem;
+    height: 3rem;
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -99,6 +100,93 @@ body {
     text-decoration: none;
     color: var(--accent);
 }
+
+.registration-form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* FORM LAYOUT */
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ROW FOR FIRST & LAST NAME */
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+/* FIELD */
+.field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.field label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.field input {
+    height: 45px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.registration-form button {
+    height: 3rem;
+    width: 50%;
+}
+
+.registration-form .reg {
+    background-color: var(--success);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.registration-form .reg-log {
+    background-color: var(--accent);
+    color: var(--secondary-color);
+    border: none;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .registration-form {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
 
 /* Tablets */
 @media (max-width: 992px) {

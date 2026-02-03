@@ -1,8 +1,24 @@
-const regLink = document.getElementById("link-reg");
-const regForm = document.querySelector(".registration-form");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".form-login");
+  const emailInput = document.getElementById("user-Email");
 
-regLink.addEventListener("click", function (e) {
-    e.preventDefault(); // para di mag refresh ang page
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    regForm.style.display = "block";
+    const email = emailInput.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email)) {
+      // Add the error class to change placeholder color
+      emailInput.classList.add("error");
+      emailInput.value = ""; // clear invalid input
+      emailInput.placeholder = "Invalid email address!";
+      emailInput.focus();
+      return;
+    }
+
+    // If valid, remove error style
+    emailInput.classList.remove("error");
+    console.log("Email is valid, continue with login...");
+  });
 });

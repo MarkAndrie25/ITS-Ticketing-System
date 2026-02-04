@@ -14,13 +14,17 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: 1px solid red;
+}
+
+body {
+    display: flex;
 }
 
 .Lside-part {
     height: 100vh;
     width: 20%;
     background-color: var(--secondary-color);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,10 +54,82 @@
 /* NAV */
 .side-navbar {
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-navbar button {
+
+    width: 300px;
+    margin-bottom: 10px;
 }
 
 .addUser {
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+
+.right-side {
+    background-color: #0A1F44;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-frm-container {
+    background-color: whitesmoke;
+    height: 600px;
+    width: 600px;
+    padding: 24px;
+}
+
+.reg-frm-container h1 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.reg-frm-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ROW LAYOUT */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+/* COLUMN LAYOUT */
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* LABEL + INPUT GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1; /* 👈 makes First & Last Name equal width */
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-actions button {
+    height: 50px;
+    width: 250px;
 }

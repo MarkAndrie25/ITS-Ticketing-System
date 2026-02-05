@@ -7,6 +7,10 @@
     --success: #22C55E;
     --warning: #F59E0B;
     --error: #EF4444;
+    --main-background-color: #f6f7fb;
+    --card-color: #ffffff;
+    --nav-color: #f2f5fd;
+    --body-color: #edf1fc;
 }
 
 * {
@@ -14,122 +18,93 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    outline: 1px solid red;
-}
 
+}
 body {
-    display: flex;
+    background-color: var(--body-color);
 }
 
-.Lside-part {
-    height: 100vh;
-    width: 20%;
-    background-color: var(--secondary-color);
+header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    margin: 0px 30px 0px 30px;
+    height: 45px;
 }
 
-/* PROFILE SECTION */
-.lblprofile {
+header h2 {
+    margin-left: 14px;
+}
+span {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 80px;
-    text-align: center;
+    gap: 10px;
 }
 
-.profile {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+nav button {
+    height: 35px;
+    width: 45px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--body-color);
 }
 
-.lblprofile h2 {
-    margin-top: 15px;
-    font-size: 1.1rem;
+nav button:hover {
+    background-color: #d6dae4;
 }
 
-/* NAV */
-.side-navbar {
-    margin-top: 50px;
+main {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    margin: 0px 30px 0px 30px;
 }
 
-.side-navbar button {
-
+.side-nav-bar {
+    background-color: #fbfcff;
+    height: calc(100vh - 45px);
     width: 300px;
-    margin-bottom: 10px;
+    border-radius: 10px 0px 0px 10px;
 }
 
-.addUser {
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
+.main-page {
+    position: absolute;
+    background-color: var(--accent);
+    height: calc(100vh - 45px);
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    background-color: var(--card-color);
+    border-radius: 10px 0 0 0;
+    box-shadow: -8px 0 12px -4px rgb(226, 248, 255);
 }
 
-
-.right-side {
-    background-color: #0A1F44;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav-links ul {
+    list-style: none;
+    padding: 0px;
+    margin: 10px;
 }
 
-.reg-frm-container {
-    background-color: whitesmoke;
-    height: 600px;
-    width: 600px;
-    padding: 24px;
+.nav-links ul li {
+  text-align: center;
+  height: 30px;
+  width: 230px;
 }
 
-.reg-frm-container h1 {
-    margin-bottom: 50px;
-    text-align: center;
+.nav-links ul li a {
+  display: block;              /* makes the <a> fill the li */
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 30px;           /* vertically centers text */
+  width: 100%;                 /* matches li width */
+  height: 100%;                /* matches li height */
+  border-radius: 5px;
 }
 
-.reg-frm-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* ROW LAYOUT */
-.form-row {
-    display: flex;
-    gap: 16px;
-}
-
-/* COLUMN LAYOUT */
-.form-column {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* LABEL + INPUT GROUP */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1; /* 👈 makes First & Last Name equal width */
-}
-
-input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.form-actions button {
-    height: 50px;
-    width: 250px;
+.nav-links ul li a:hover {
+  background-color: #d6dae4;
 }

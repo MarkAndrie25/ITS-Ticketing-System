@@ -1,38 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link rel="stylesheet" href="../style/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin</title>
+
+  <link rel="stylesheet" href="../style/admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
+
 <body>
-    <header> 
-        <h2>ITS <span>work management</span></h2>
-        <nav>
-            <button class="invite-member"><i class="fa-solid fa-person-circle-plus"></i></button>
-            <button class="invite-member"><i class="fa-solid fa-person-circle-plus"></i></button>
-            <button class="invite-member"><i class="fa-solid fa-person-circle-plus"></i></button>
-            <button class="invite-member"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </nav>
-    </header>
 
-    <main>
-        <div class="side-nav-bar">
-            <div class="nav-links">
-                <ul>
-                    <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
-                </ul>
-            </div>
-        </div>
+<header class="top-header">
+  <h2>ITS <span>work management</span></h2>
 
-        <div class="main-page">
+  <nav class="top-actions">
+    <button><i class="fa-solid fa-person-circle-plus"></i></button>
+    <button><i class="fa-solid fa-person-circle-plus"></i></button>
+    <button><i class="fa-solid fa-person-circle-plus"></i></button>
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+  </nav>
+</header>
 
-        </div>
-    </main>
+<main class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="side-nav-bar">
+    <nav>
+      <ul class="menu">
+
+        <li>
+          <a href="#" data-target="home">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <i class="fa-solid fa-computer"></i>
+            Ticket Management
+            <span class="arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-target="tickets">All Tickets</a></li>
+            <li><a href="#">Create Ticket</a></li>
+            <li><a href="#">Pending</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <i class="fa-solid fa-user"></i>
+            User Management
+            <span class="arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-target="addUser">Add User</a></li>
+            <li><a href="#">Edit User</a></li>
+            <li><a href="#">Assign Role</a></li>
+            <li><a href="#">Reset Password</a></li>
+            <li><a href="#">Delete User</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <section class="main-page">
+
+    <div class="content active" id="home">
+      <h2>Welcome Admin</h2>
+      <p>Select an option from the sidebar.</p>
+    </div>
+
+    <div class="content" id="addUser">
+      <h2>Add User</h2>
+
+      <form class="registration-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <div class="content" id="tickets">
+      <h2>All Tickets</h2>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
 </body>
 </html>

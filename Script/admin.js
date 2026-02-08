@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contents = document.querySelectorAll(".content");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
-  // PAGE SWITCHING
+  // SPA PAGE SWITCHING
   menuLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // DROPDOWN TOGGLE (FIXED)
+  // DROPDOWN TOGGLE (ANCHOR VERSION)
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
-      e.preventDefault();
+      e.preventDefault(); // 🔥 REQUIRED
       toggle.parentElement.classList.toggle("open");
     });
   });

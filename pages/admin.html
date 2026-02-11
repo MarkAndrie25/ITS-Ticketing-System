@@ -45,7 +45,7 @@
 
           <ul class="dropdown-menu">
             <li><a href="#" data-target="tickets">All Tickets</a></li>
-            <li><a href="#">Create Ticket</a></li>
+            <li><a href="#" data-target="create-tickets">Create Ticket</a></li>
             <li><a href="#">Pending</a></li>
           </ul>
         </li>
@@ -59,7 +59,7 @@
 
           <ul class="dropdown-menu">
             <li><a href="#" data-target="addUser">Add User</a></li>
-            <li><a href="#">Edit User</a></li>
+            <li><a href="#" data-target="edit-user">Edit User</a></li>
             <li><a href="#">Assign Role</a></li>
             <li><a href="#">Reset Password</a></li>
             <li><a href="#">Delete User</a></li>
@@ -81,31 +81,129 @@
     <div class="content" id="addUser">
       <h2>Add User</h2>
 
-        <form class="registration-form add-user-form">
+      <form class="registration-form add-user-form">
+      
+        <!-- FULL NAME -->
+        <div class="input-group">
+          <input type="text" id="fname" placeholder=" " required />
+          <label for="fname">Full Name</label>
+        </div>
+      
+        <!-- ROLE DROPDOWN -->
+        <div class="input-group select-group">
+            <select id="role" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Admin">Admin</option>
+              <option value="Employee">Employee</option>
+              <option value="Intern">Intern</option>
+            </select>
+    
+          <label for="role">Role</label>
+    
+          <!-- Dropdown Icon -->
+          <i class="fa-solid fa-chevron-down select-icon"></i>
+        </div>
 
-          <div class="input-group">
-            <input type="text" id="fname" placeholder=" " required />
-            <label for="fname">Full name</label>
-          </div>
-        
-          <div class="input-group">
-            <input type="email" id="email" placeholder=" " required />
-            <label for="email">Email</label>
-          </div>
-        
-          <div class="input-group">
-            <input type="password" id="password" placeholder=" " required />
-            <label for="password">Password</label>
-          </div>
-        
-          <button type="submit">Register</button>
-        </form>
 
+    <!-- EMAIL -->
+    <div class="input-group">
+      <input type="email" id="email" placeholder=" " required />
+      <label for="email">Email</label>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-group">
+      <input type="password" id="password" placeholder=" " required />
+      <label for="password">Password</label>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+
+    <div class="content" id="edit-user">
+      <h2>Edit User</h2>
+
+      <div class="form-container">
+        
+      </div>
+      
     </div>
 
     <div class="content" id="tickets">
       <h2>All Tickets</h2>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Task</th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Timeline</th>
+          </tr>
+
+          
+        </table>
+      </div>
     </div>
+
+    <div class="content" id="create-tickets">
+  <h2>Create Ticket</h2>
+
+  <form class="registration-form add-user-form">
+
+    <!-- TASK TITLE -->
+    <div class="input-group">
+      <input type="text" id="taskTitle" placeholder=" " required />
+      <label for="taskTitle">Task Title</label>
+    </div>
+
+    <!-- OWNER -->
+    <div class="input-group">
+      <input type="text" id="owner" placeholder=" " required />
+      <label for="owner">Owner</label>
+    </div>
+
+    <!-- STATUS -->
+    <div class="input-group select-group">
+      <select id="status" required>
+        <option value="" disabled selected hidden></option>
+        <option value="New">New</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <label for="status">Status</label>
+      <i class="fa-solid fa-chevron-down select-icon"></i>
+    </div>
+
+    <!-- PRIORITY -->
+    <div class="input-group select-group">
+      <select id="priority" required>
+        <option value="" disabled selected hidden></option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <label for="priority">Priority</label>
+      <i class="fa-solid fa-chevron-down select-icon"></i>
+    </div>
+
+    <!-- DUE DATE -->
+    <div class="input-group">
+      <input type="date" id="dueDate" required />
+      <label for="dueDate">Due Date</label>
+    </div>
+
+    <button type="submit">Create Ticket</button>
+  </form>
+</div>
+
+
+
+    
 
   </section>
 

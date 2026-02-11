@@ -65,4 +65,68 @@ document.addEventListener("DOMContentLoaded", () => {
       dropdown.classList.toggle("open", !isOpen);
     });
   });
+
+
+
+
+
+    /* ===============================
+     CREATE TICKET → ADD TO TABLE
+  =============================== */
+
+  const ticketForm = document.querySelector("#create-tickets form");
+  const ticketTableBody = document.querySelector("#tickets tbody");
+
+  if (ticketForm) {
+    ticketForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get form values
+      const taskTitle = document.getElementById("taskTitle").value;
+      const owner = document.getElementById("owner").value;
+      const status = document.getElementById("status").value;
+      const priority = document.getElementById("priority").value;
+      const dueDate = document.getElementById("dueDate").value;
+
+      // Get today's date
+      const today = new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+
+      // Create new table row
+      const newRow = document.createElement("tr");
+
+      newRow.innerHTML = `
+        <td>${taskTitle}</td>
+        <td>${owner}</td>
+        <td><span class="status new">${status}</span></td>
+        <td>${dueDate}</td>
+        <td><span class="priority low">${priority}</span></td>
+        <td>${today}</td>
+        <td class="actions">
+          <button class="btn-view"><i class="fa-solid fa-eye"></i></button>
+          <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      `;
+
+      // Add row to table
+      ticketTableBody.appendChild(newRow);
+
+      // Reset form
+      ticketForm.reset();
+
+      // Switch to Tickets page automatically
+      showPage("tickets");
+
+      // Highlight Tickets menu
+      const ticketsLink = document.querySelector('.menu a[data-target="tickets"]');
+      if (ticketsLink) {
+        setActiveLink(ticketsLink);
+      }
+    });
+  }
+
 });

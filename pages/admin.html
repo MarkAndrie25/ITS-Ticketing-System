@@ -46,7 +46,6 @@
           <ul class="dropdown-menu">
             <li><a href="#" data-target="tickets">All Tickets</a></li>
             <li><a href="#" data-target="create-tickets">Create Ticket</a></li>
-            <li><a href="#">Pending</a></li>
           </ul>
         </li>
 
@@ -58,11 +57,8 @@
           </a>
 
           <ul class="dropdown-menu">
+            <li><a href="#" data-target="allUsers">All User</a></li>
             <li><a href="#" data-target="addUser">Add User</a></li>
-            <li><a href="#" data-target="edit-user">Edit User</a></li>
-            <li><a href="#">Assign Role</a></li>
-            <li><a href="#">Reset Password</a></li>
-            <li><a href="#">Delete User</a></li>
           </ul>
         </li>
 
@@ -121,15 +117,21 @@
   </form>
 </div>
 
+<div class="content" id="allUsers">
+      <h2>All User</h2>
 
-    <div class="content" id="edit-user">
-      <h2>Edit User</h2>
-
-      <div class="form-container">
-        
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </table>
       </div>
-      
     </div>
+   
 
     <div class="content" id="tickets">
       <h2>All Tickets</h2>
@@ -144,8 +146,6 @@
             <th>Priority</th>
             <th>Timeline</th>
           </tr>
-
-          
         </table>
       </div>
     </div>

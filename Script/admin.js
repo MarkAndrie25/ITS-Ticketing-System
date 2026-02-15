@@ -129,4 +129,61 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ===============================
+   DELETE TICKET
+================================ */
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".btn-delete")) {
+
+    const confirmDelete = confirm("Are you sure you want to delete this ticket?");
+    if (!confirmDelete) return;
+
+    const row = e.target.closest("tr");
+    if (row) {
+      row.remove();
+    }
+  }
+});
+
+
+/* ===============================
+   EDIT TICKET
+================================ */
+document.addEventListener("click", function (e) {
+
+  const editBtn = e.target.closest(".btn-edit");
+  if (!editBtn) return;
+
+  const row = editBtn.closest("tr");
+  const cells = row.querySelectorAll("td");
+
+  // If already in edit mode → Save
+  if (editBtn.classList.contains("editing")) {
+
+    cells.forEach((cell, index) => {
+      const input = cell.querySelector("input");
+      if (input) {
+        cell.textContent = input.value;
+      }
+    });
+
+    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+    editBtn.classList.remove("editing");
+    return;
+  }
+
+  // Switch to edit mode
+  cells.forEach((cell, index) => {
+
+    if (index === cells.length - 1) return; // skip action column
+
+    const text = cell.textContent;
+    cell.innerHTML = `<input type="text" value="${text}" />`;
+  });
+
+  editBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+  editBtn.classList.add("editing");
+});
+
+
 });
